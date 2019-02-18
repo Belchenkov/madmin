@@ -3,3 +3,19 @@
     top: 40%;
     left: 47%;
 }
+
+.login {
+    margin-top: 70px;
+    margin-bottom: 250px;
+}
+
+.btn-extended {
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+footer {
+    display: block!important;
+}
