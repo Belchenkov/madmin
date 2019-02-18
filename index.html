@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Madmin | Home</title>
 </head>
-<body>
+<body class="grey lighten-4">
     <nav class="blue darken-2">
         <div class="container">
             <div class="nav-wrapper">
@@ -131,6 +131,152 @@
         </div>
     </section>
 
+    <!-- Section: Visitors -->
+    <section class="section-visitors blue lighten-4">
+        <div class="row">
+            <div class="col s12 m6 l8">
+                <div class="card-panel">
+                    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <!-- Latest Comments -->
+                <ul class="collection with-header latest-comments">
+                    <li class="collection-header">
+                        <h5>Latest Comments</h5>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="./img/person1.jpg" alt="Person" class="circle">
+                        <span class="title">John Doe</span>
+                        <p class="truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur nemo
+                            non perspiciatis, sed ullam voluptatibus.</p>
+                        <a href="#" class="approve green-text">Approve</a>
+                        <a href="#" class="deny red-text">Deny</a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="./img/person2.jpg" alt="Person" class="circle">
+                        <span class="title">Steve Smith</span>
+                        <p class="truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur nemo
+                            non perspiciatis, sed ullam voluptatibus.</p>
+                        <a href="#" class="approve green-text">Approve</a>
+                        <a href="#" class="deny red-text">Deny</a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="./img/person3.jpg" alt="Person" class="circle">
+                        <span class="title">Ellen Williams</span>
+                        <p class="truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur nemo
+                            non perspiciatis, sed ullam voluptatibus.</p>
+                        <a href="#" class="approve green-text">Approve</a>
+                        <a href="#" class="deny red-text">Deny</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Recent Posts & Todos -->
+    <section class="section-recent">
+        <div class="row">
+            <div class="col s12 l8 m6">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Recent Posts</span>
+                        <table class="striped">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Post One</td>
+                                    <td>Web Development</td>
+                                    <td>
+                                        <a href="details.html" class="btn blue lighten-2">Details</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Post Two</td>
+                                    <td>Graphic Design</td>
+                                    <td>
+                                        <a href="details.html" class="btn blue lighten-2">Details</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Post Three</td>
+                                    <td>Web Development</td>
+                                    <td>
+                                        <a href="details.html" class="btn blue lighten-2">Details</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Quick Todos</span>
+                        <form id="todo-form">
+                            <div class="input-field">
+                                <input type="text" id="todo" placeholder="Add Todo...">
+                            </div>
+                        </form>
+                        <ul class="collection todos">
+                            <li class="collection-item">
+                                <div>Todo One
+                                    <a href="#" class="secondary-content delete">
+                                        <i class="material-icons">close</i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="collection-item">
+                                <div>Todo Two
+                                    <a href="#" class="secondary-content delete">
+                                        <i class="material-icons">close</i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section blue darken-2 white-text center">
+        <p>Madmin Panel Copyright &copy; 2019</p>
+    </footer>
+
+    <!-- Fixed Action Button -->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+            <i class="material-icons">add</i>
+        </a>
+        <ul>
+            <li>
+                <a href="#post-modal" class="modal-trigger btn-floating blue">
+                    <i class="material-icons">mode_edit</i>
+                </a>
+            </li>
+            <li>
+                <a href="#category-modal" class="modal-trigger btn-floating blue">
+                    <i class="material-icons">folder</i>
+                </a>
+            </li>
+            <li>
+                <a href="#user-modal" class="modal-trigger btn-floating blue">
+                    <i class="material-icons">supervisor_account</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
     <!-- Preloader -->
     <div class="loader preloader-wrapper big active">
         <div class="spinner-layer spinner-blue-only">
@@ -147,6 +293,8 @@
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="./js/chart.js"></script>
 <script>
     // Hide Sections
     $('.section').hide();
@@ -175,6 +323,40 @@
                     }
                 })
             });
+
+            // Comments - Approve & Deny
+            $('.approve').click(function (e) {
+                Materialize.toast('Comment Approved', 3000);
+                e.preventDefault();
+            });
+            $('.deny').click(function (e) {
+                Materialize.toast('Comment Denied', 3000);
+                e.preventDefault();
+            });
+
+            // Quick Todos
+            $('#todo-form').submit(function (e) {
+                const output = `
+                    <li class="collection-item">
+                        <div>${$('#todo').val()}
+                            <a href="#" class="secondary-content delete">
+                                <i class="material-icons">close</i>
+                            </a>
+                        </div>
+                    </li>
+                `;
+                $('.todos').append(output);
+
+                Materialize.toast('Todo Added', 3000);
+                e.preventDefault();
+            });
+
+            // Delete Todos
+            $('.todos').on('click', '.delete', function (e) {
+                $(this).parent().parent().remove();
+                Materialize.toast('Todo Removed', 3000);
+                e.preventDefault();
+            })
         });
     }, 1000);
 </script>

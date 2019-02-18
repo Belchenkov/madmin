@@ -3,3 +3,7 @@
     top: 40%;
     left: 47%;
 }
+
+footer {
+    display: block!important;
+}
