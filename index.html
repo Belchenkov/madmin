@@ -276,6 +276,34 @@
         </ul>
     </div>
 
+    <!-- Add Post Modal -->
+    <div id="post-modal" class="modal">
+        <div class="modal-content">
+            <h4>Add Post</h4>
+            <form>
+                <div class="input-field">
+                    <input type="text" id="title">
+                    <label for="title">Title</label>
+                </div>
+                <div class="input-field">
+                    <select>
+                        <option value="" disabled selected>Select option</option>
+                        <option value="1">Web Development</option>
+                        <option value="2">Graphic Design</option>
+                        <option value="3">Tech Gadgets</option>
+                        <option value="4">Other</option>
+                    </select>
+                    <label>Category</label>
+                </div>
+                <div class="input-field">
+                    <textarea name="body" id="body" class="materialize-textarea"></textarea>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close btn blue white-text">Submit</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Preloader -->
     <div class="loader preloader-wrapper big active">
@@ -295,6 +323,7 @@
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script src="./js/chart.js"></script>
+<script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
 <script>
     // Hide Sections
     $('.section').hide();
@@ -307,9 +336,14 @@
             // Hide Preloader
             $('.loader').fadeOut();
 
-
             // Init Side Nav
             $('.button-collapse').sideNav();
+
+            // Init Modal
+            $('.modal').modal();
+
+            // Init Select
+            $('select').material_select();
 
             // Counter
             $('.count').each(function () {
@@ -356,7 +390,9 @@
                 $(this).parent().parent().remove();
                 Materialize.toast('Todo Removed', 3000);
                 e.preventDefault();
-            })
+            });
+
+            CKEDITOR.replace( 'body' );
         });
     }, 1000);
 </script>
