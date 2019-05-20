@@ -2,4 +2,4 @@
 
 ### Admin Panel on materialize.css 
 
-Demo: http://185.228.232.41/projects/madmin
+Demo: http://193.187.174.213/projects/madmin
